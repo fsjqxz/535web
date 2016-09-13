@@ -1,124 +1,228 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>535--登录</title>
-    <meta charset="UTF-8">
+	<title>zhuye</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/fullPage.js/2.8.6/jquery.fullPage.css">
+	<style type="text/css">
+		  *{
+   		margin: 0;
+   		padding: 0;
+   		}
+		body{
+			color: #fff;
+		}
+		.slide{
+			font-size: 20px;
+			text-align: center;
+		}
+		.section{
+			position: relative;
+			background: #fff;
+			overflow: hidden;
+			text-align: center;
+		}
+		.section1{
+			background-image: url(jpg/graduation.jpg);
+			background-size:cover;
+		}
+		.section1 #head{
+        background: #A98E87; 
+	    }
+	    .section1 #head .nav {
+	    	list-style: none;
+	    	height: 30px; 
+	    	padding-left: 500px;
+	    	border-bottom: 5px solid #36667D;
+	    }
+	    .section1 #head .nav li {
+	    	float:left;
+	        height:30px;
+	    }
+	    .section1 #head .nav li a{
+	        display: block;
+	    	height:30px; 
+	    	width: 120px;
+	    	text-align: center; 
+	    	line-height: 30px; 
+	    	text-decoration: none;
+	    	margin-bottom: 1px;
+	    	color: #FFFFFF;
+	    }
+	    .section1 #head .nav li #display{
+	        padding-right: 10px;
+	    }
+	    .section1 h1{
+	    	margin-top:30px; 
+	    	margin-left:-500px; 
+	    }
+	    .section1 #seeyou{
+	    	width: 570px;
+	    	position: absolute;
+	    	top: 800px;
+	    	left: 180px;
+	    	font-size: 20px;
+	    }
+	    
 
-    <link rel="stylesheet" type="text/css" href="css/main.css" >
-    <link rel="stylesheet" type="text/css" href="css/huadong.css">
-    <script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
-    <script type="text/javascript" src="js/huadong.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            $('a').hover(
-                function(){
-                    $(this).stop().animate({"width":"160px"},200);
-                },
-                function(){
-                    $(this).stop().animate({"width":"120px"},200);
-                }
-            )
-        })
-
-        window.onload=function(){
-    var aLi=document.getElementsByTagName('li');
-    for(var i=0; i<aLi.length; i++){
-        aLi[i].onmouseover=function(){
-            //鼠标经过一级菜单，二级菜单动画下拉显示出来
-            var This= this.getElementsByTagName("ul")[0];
-            if(This){
-                clearInterval(This.time);
-                This.time= setInterval(
-                    function(){
-                        This.style.height= This.offsetHeight + 30 + "px";
-                        if(This.offsetHeight >= 120){
-                            clearInterval(This.time);
-                        }
-                    },100
-                                  );
-            }
-        }
-        //鼠标离开菜单，二级菜单动画收缩起来。        
-        aLi[i].onmouseout=function(){
-            var This= this.getElementsByTagName("ul")[0];
-            if(This){
-                clearInterval(This.time);
-                This.time= setInterval(
-                    function(){
-                        This.style.height= This.offsetHeight - 30 + "px";
-                        if(This.offsetHeight <= 0){
-                            clearInterval(This.time);
-                        }
-                    },30
-                );
-            }
-        }              
-        }
-    }
-
-    window.onload=function(){
-    var div1=document.getElementById("div1");
-    div1.onmouseover=function(){
-        startmove(10,0);
-    }
-    div1.onmouseout=function(){
-        startmove(-10,-250);
-    }
-//定义了动画函数，其中speed是移动速度，tiger是div的宽度
-    }
-    var timer=null;
-    function startmove(speed,tiger){
-        clearInterval(timer);
-        var div1=document.getElementById("div1");
-        timer=setInterval(function(){
-        if (div1.offsetLeft ==tiger ){
-            clearInterval(timer);
-        }
-        else{
-        div1.style.left = div1.offsetLeft + speed+"px";
-        }
-        },30)
-    }
-
-    </script>
-    
-    <embed src="http://www.535hude.cn/music/back.mp3" hidden="true" autostart="true" loop="true" >
-
+	</style>
 </head>
-<body >
-
-<!--背景图片-->
-<div id="background" style="position:absolute;z-index:-1;width:100%;height:100%;top:0px;left:0px;">
-    <img src="http://www.535hude.cn/jpg/535.jpg" width="100%" height="100%"/>
-</div>
-<!--导航栏-->
-<ul class="nav">
-    <li><a  class="on" href="#">首页</a></li>  
-    <li><a  href="#">论坛区</a></li>
-    <li><a  href="http://www.535hude.cn/fuli/index.html">福利区</a></li>
-    <li><a  href="#">图片区</a></li>
-    <li><a  href="#" >音乐区</a>
-        <ul class="subNav">
-            <li ><a href="">演员</a></li>
-            <li ><a href="">丑八怪</a></li>
-            <li ><a href="">绅士</a></li>
-            <li ><a href="">你还要怎样</a></li>
-        </ul>
-    </li>
-</ul>
-    
-<!--登录系统-->
-<div id="div1">
-    <img src="jpg/login.jpg" width="100%" height="100%"/>
-    <span id="share">登录</span>
-    <ul>
-        <li>帐号</li>
-        <li><input type="text" name="loginname"></li>
-        <li>密码</li>
-        <li><input type="password" name="loginpwd"></li>
+<body>
+<div id="fullpage">
+	<div class="section section1">
+	<audio id="navmp3" src="music/back2.mp3"></audio>
+	<audio id="touchmp3"></audio>
+	<!--           视频的添加
+	<script src="js/video.js"></script>
+	<link href="css/video-js.css" rel="stylesheet" type="text/css">
+	<video id="videoseeyou" class="video-js vjs-default-skin" controls preload="none" width="400" height="300" poster="http://video-js.zencoder.com/oceans-clip.png" data-setup="{}">
+	    <source src="video/ah_00021.mp4" type='video/mp4' />
+	    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track>// Tracks need an ending tag thanks to IE9 
+    	<track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track>//  Tracks need an ending tag thanks to IE9 
+    	.section1 #videoseeyou{
+	    	position: absolute;
+	    	top: 300px;
+	    	left: 200px;
+	    }
+    -->
+	</video>
+	<div id="head">
+    <ul class="nav">
+        <li mp3="1"><a  class="first-menu select"  class="on" href="#">首页</a></li>  
+        <li mp3="2"><a  class="first-menu"  href="#">论坛区</a></li>
+        <li mp3="3"><a  class="first-menu"  href="http://www.535hude.cn/fuli/index.html">福利区</a></li>
+        <li mp3="4"><a  class="first-menu"  href="#">图片区</a></li>
+        <li mp3="5"><a  class="first-menu"  href="#" >音乐区</a></li>
+        <li class="switch" style="float:right;" ><a href="#" id="hidemp3" class="Hidden" >关闭</a></li>
     </ul>
+	</div>   
+	<h1>毕业季</h1>
+	<div id="seeyou">
+		<p>我们吹过了四季的风，唱过了悲与欢的青春，一季又一季漫长轮回的时光，编织了一年又一年的聚与散，如果下一刻是一段永远，那么，我仍会想起有那么句话，即使不在一起，也要像在一起一样，或许我会嘻嘻哈哈的告诉你这一句话，但，请你一定记的……那四季的风</p>
+		</div>
+	</div>
+	<div class="section section2">
+		<div class="slide">slide1</div>
+		<div class="slide">slide2</div>
+		<div class="slide">slide3</div>
+		<div class="slide">slide4</div>
+		<div class="slide">slide5</div>
+	</div>
+	<div class="section section3"><h1>这是第三屏</h1></div>
+	<div class="section section4"><h1>这是第四屏</h1></div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+<script src="http://cdn.bootcss.com/fullPage.js/2.8.6/jquery.fullPage.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/move.js/0.5.0/move.min.js" ></script>
+<script type="text/javascript">
+	$(document).ready(function (){
+		$('#fullpage').fullpage({
+			verticalCentered:false,
+			scrollingSpeed:1000,
+			anchors:['page1','page2','page3','page4'],
+			navigation:true,
+			navigationPosition:'right',
+			navigationTooltips:['网站主页','图片展示','个人简历','联系'],
+			showActiveTooltip:true,
+			slidesNavigation:true,
+			slidesNavPosition:'bottom',
+			//下面是回调函数的使用
+			afterLoad:function(link,index){
+				var oA = $('#navmp3')
+				switch(index){
+					case 1:						
+						oA[0].play();
+						move('.section1 h1').scale(1.5).end();
+						move('.section1 #seeyou').set('top','125px').end()
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					case 3:
+						break;
+					default:
+						break;
+				}
+			},
+			onLeave:function(link,index){
+				switch(index){
+					case 1:
+						var oA = $('#navmp3');
+						oA[0].pause();
+						move('.section1 h1').scale(1).end();
+						move('.section1 #seeyou').set('top','800px').end();
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					case 3:
+						break;
+					default:
+						break;
+				}
+			}
+			/*
+			afterRender:function(){				
+			}*/
+		});
+	});
+</script>
+<script type="text/javascript">
 
+//用jqury实现导航栏的按键音和背景音乐
+	$(document).ready(function(){
+	    var oA = $('#navmp3');
+	    var mp3hide = $('#hidemp3');
+	    $('.nav li:not(.switch)').mouseover(function(){             
+            $("#touchmp3")[0].src = 'http://s8.qhimg.com/share/audio/piano1/a'+this.getAttribute('mp3')+'.mp3';
+            $("#touchmp3")[0].play();   			
+		});     
+	    mp3hide.click(function(){
+	        if(mp3hide.attr("class") == "Hidden"){
+	        mp3hide.html("开启");
+	        mp3hide.attr("class","open");
+	        oA[0].pause();
+	    }else{
+	        mp3hide.html("关闭");
+	        mp3hide.attr("class","Hidden");
+	        oA[0].play();
+	    }      
+    });
+
+});
+
+//以下是上面使用原生js实现 ，jqury并没有简单很多   
+/*    var aLi = document.getElementsByTagName('li');
+    var oA = document.getElementById('navmp3');
+    var mp3hide = document.getElementById('hidemp3');
+     
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].onmouseover = function(){               
+                //this.getAttribute('au');
+                if(mp3hide.className == "Hidden") {  
+                oA.src = 'http://s8.qhimg.com/share/audio/piano1/a'+this.getAttribute('mp3')+'.mp3';
+                oA.play();               
+            }else{
+                oA.pause();
+            }
+        }
+    }
+    mp3hide.onclick=function(){
+        if(mp3hide.className == "Hidden"){
+        mp3hide.innerHTML = "开启";
+        mp3hide.className = "open";
+    }else{
+        mp3hide.innerHTML = "隐藏";
+        mp3hide.className = "Hidden";
+    }      
+    }
+
+}   
+*/
+</script>
 </body>
 </html>
+
