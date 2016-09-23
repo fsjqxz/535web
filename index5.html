@@ -5,7 +5,68 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/fullPage.js/2.8.6/jquery.fullPage.css">
-	<link rel="stylesheet" type="text/css" href="js/535hude.css">
+	<style type="text/css">
+		  *{
+   		margin: 0;
+   		padding: 0;
+   		}
+		body{
+			color: #fff;
+		}
+		.slide{
+			font-size: 20px;
+			text-align: center;
+		}
+		.section{
+			position: relative;
+			background: #fff;
+			overflow: hidden;
+			text-align: center;
+		}
+		.section1{
+			background-image: url(jpg/graduation.jpg);
+			background-size:cover;
+		}
+		.section1 #head{
+        background: #A98E87; 
+	    }
+	    .section1 #head .nav {
+	    	list-style: none;
+	    	height: 30px; 
+	    	padding-left: 500px;
+	    	border-bottom: 5px solid #36667D;
+	    }
+	    .section1 #head .nav li {
+	    	float:left;
+	        height:30px;
+	    }
+	    .section1 #head .nav li a{
+	        display: block;
+	    	height:30px; 
+	    	width: 120px;
+	    	text-align: center; 
+	    	line-height: 30px; 
+	    	text-decoration: none;
+	    	margin-bottom: 1px;
+	    	color: #FFFFFF;
+	    }
+	    .section1 #head .nav li #display{
+	        padding-right: 10px;
+	    }
+	    .section1 h1{
+	    	margin-top:30px; 
+	    	margin-left:-500px; 
+	    }
+	    .section1 #seeyou{
+	    	width: 570px;
+	    	position: absolute;
+	    	top: 800px;
+	    	left: 180px;
+	    	font-size: 20px;
+	    }
+	    
+
+	</style>
 </head>
 <body>
 <div id="fullpage">
@@ -25,14 +86,15 @@
 	    	left: 200px;
 	    }
     -->
+	</video>
 	<div id="head">
     <ul class="nav">
-        <li mp3="1"><span><a  class="first-menu select"  class="on" href="#">首页</a></span></li>  
-        <li mp3="2"><span><a  class="first-menu"  href="#">论坛区</a></li>
-        <li mp3="3"><span><a  class="first-menu"  href="http://www.535hude.cn/fuli/index.html">福利区</a></span></li>
-        <li mp3="4"><span><a  class="first-menu"  href="#">图片区</a></span></li>
-        <li mp3="5"><span><a  class="first-menu"  href="#" >音乐区</a></span></li>
-        <li class="switch" style="float:right;" ><span><a href="#" id="hidemp3" class="Hidden" >关闭</a></span></li>
+        <li mp3="1"><a  class="first-menu select"  class="on" href="#">首页</a></li>  
+        <li mp3="2"><a  class="first-menu"  href="#">论坛区</a></li>
+        <li mp3="3"><a  class="first-menu"  href="http://www.535hude.cn/fuli/index.html">福利区</a></li>
+        <li mp3="4"><a  class="first-menu"  href="#">图片区</a></li>
+        <li mp3="5"><a  class="first-menu"  href="#" >音乐区</a></li>
+        <li class="switch" style="float:right;" ><a href="#" id="hidemp3" class="Hidden" >关闭</a></li>
     </ul>
 	</div>   
 	<h1>毕业季</h1>
@@ -41,64 +103,18 @@
 		</div>
 	</div>
 	<div class="section section2">
-		<div class="slide side1">
-			<div class="warp-dayi effect">
-			 	<h1>大学</h1>
-			 	<input  id="volume" type="range" name="volume" min="1" max="100" value="40">
-			 </div>
-			 <div id="seewords">
-			 <ul id="conn1">
-			 	<li>与君离别意，同是宦游人</li>
-			 	<li>又送王孙去，萋萋满别情</li>
-			 	<li>春草明年绿，王孙归不归?</li>
-			 	<li>渭城朝雨浥轻尘，客舍青青柳色新</li>
-			 	<li>寒雨连江夜入吴，平明送客楚山孤</li>
-			 	<li>莫愁前路无知己，天下谁人不识君</li>
-			 	<li>桃花潭水三千尺，不及汪伦送我情</li>
-			 	<li>孤帆远影碧空尽，唯见长江天际流</li>
-			 	<li>山回路转不见君，雪上空留马行处</li>
-			 	<li>长亭外，古道边，芳草碧连天。</li>
-			 	<li>天之涯，海之角，知交半零落</li>
-			 </ul>
-			 <ul id="conn2"></ul>
-			 </div>
-		</div>
+		<div class="slide">slide1</div>
 		<div class="slide">slide2</div>
 		<div class="slide">slide3</div>
 		<div class="slide">slide4</div>
 		<div class="slide">slide5</div>
 	</div>
 	<div class="section section3"><h1>这是第三屏</h1></div>
-	<div class="section section4">
-		<div class="container">
-			<div class="box">
-				<img src="jpg/back.jpg" width="250px" >
-				<img class="buddy" src="jpg/head.jpg">
-				<div class="inner">
-					<h3>王怡景</h3>
-					<span>浮生若梦</span>
-					<div class="btn">联系我</div>
-				</div>
-			</div>
-			<div class="pop">
-				<div class="close">&times;</div>
-				<!-- &times是一个转义符 关闭按钮-->
-				<div id="qq">
-					<img src="jpg/qq.png" height="35px"  >
-					<span>1187093394</span>
-				</div>
-				<div id="weixin"></div>
-				<div id="mail"></div>
-			</div>
-		</div>
-	</div>
+	<div class="section section4"><h1>这是第四屏</h1></div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
 <script src="http://cdn.bootcss.com/fullPage.js/2.8.6/jquery.fullPage.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/move.js/0.5.0/move.min.js" ></script>
-<script type="text/javascript" src="js/velocity.min.js"></script>
-<script type="text/javascript" src="js/velocity.ui.min.js"></script>
-<script type="text/javascript" src="js/callme.js"></script>
 <script type="text/javascript">
 	$(document).ready(function (){
 		$('#fullpage').fullpage({
@@ -111,18 +127,16 @@
 			showActiveTooltip:true,
 			slidesNavigation:true,
 			slidesNavPosition:'bottom',
-			//下面是回调函数的使用   下面使用的move.js 也可用velocity.js实现
+			//下面是回调函数的使用
 			afterLoad:function(link,index){
 				var oA = $('#navmp3')
 				switch(index){
-					case 1:
-
+					case 1:						
 						oA[0].play();
 						move('.section1 h1').scale(1.5).end();
-						move('.section1 #seeyou').set('top','125px').end();
+						move('.section1 #seeyou').set('top','125px').end()
 						break;
 					case 2:
-						move('.section2 .side1 .warp-dayi').set('width','40%').end();
 						break;
 					case 3:
 						break;
@@ -137,12 +151,10 @@
 					case 1:
 						var oA = $('#navmp3');
 						oA[0].pause();
-
 						move('.section1 h1').scale(1).end();
 						move('.section1 #seeyou').set('top','800px').end();
 						break;
 					case 2:
-						//move('.section2 .side1 .warp-dayi').set('width','10%').end();
 						break;
 					case 3:
 						break;
@@ -180,7 +192,7 @@
 	    }      
     });
 
-
+});
 
 //以下是上面使用原生js实现 ，jqury并没有简单很多   
 /*    var aLi = document.getElementsByTagName('li');
@@ -209,70 +221,7 @@
     }
 
 }   
-*/      
-			/*$(function(){
-            $('.first-menu').hover(
-                function(){
-                    //$(this).parent().animate({"height":"30px"},10000);
-                    $(this).parent().css("height",'30px');
-                    return false; 
-                    //阻止事件冒泡event.stopPropagation();
-                },
-                function(){
-                    $(this).parent().animate({"height":"0px"},1000);
-                    return false;
-                }
-            )
-        })*/
-
-
-
-			//透明度的问题
-			$('#seeyou').mouseover(function(){
-				$('.section1').css("opacity","0.4");
-				$('#seeyou p').css("opacity","1");
-				$('#seeyou p').css("color","rgba(0,0,0,1)");
-			});
-			$('#seeyou').mouseout(function(){
-				$('.section1').css("opacity","1");
-				$('#seeyou').css("opacity","1");
-				$('#seeyou p').css("color","#175772");
-			});
-
-
-});
-
-//以下是滚动
-	var seewords = document.getElementById('seewords');
-	var conn1 = document.getElementById('conn1');
-	var conn2 = document.getElementById('conn2');
-	var ovolume = document.getElementById('volume')
-	var speed = parseInt(ovolume.value);
-	seewords.scrollTop = 0;
-	conn2.innerHTML = conn1.innerHTML;
-	function scrollUp(){
-		if (seewords.scrollTop>conn1.scrollHeight) {
-			seewords.scrollTop =0;
-		}else{
-			seewords.scrollTop ++;
-		}
-	}
-	var myScroll = setInterval("scrollUp()",speed);
-	seewords.onmouseover = function(){
-		clearInterval(myScroll);
-	}
-	seewords.onmouseout = function(){
-		var speed = parseInt(document.getElementById('volume').value);
-		myScroll = setInterval("scrollUp()",speed);
-	}
-	ovolume.onmouseover = function(){
-		clearInterval(myScroll);
-	}
-	ovolume.onmouseout = function(){
-		var speed = parseInt(document.getElementById('volume').value);
-		myScroll = setInterval("scrollUp()",speed);
-	}
-	          
+*/
 </script>
 </body>
 </html>

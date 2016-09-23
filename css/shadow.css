@@ -1,0 +1,84 @@
+body{
+	font-family: Arial;
+	font-size: 20px;
+}
+body,ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.warp{
+	width: 70%;
+	height:200px;
+	margin: 50px auto;
+	background: #fff;
+}
+.warp h1{
+	font-size: 20px;
+	text-align: center;
+	line-height: 200px;
+}
+.effect{
+	position: relative;
+	box-shadow: 0px 1px 4px rgba(0,0,0,0.3),
+	0px 0px 40px rgba(0,0,0,0.1) inset;
+	/*水平  垂直 模糊程度 模糊距离 颜色*/ 
+}
+.effect:before,.effect:after{
+	content:"";
+	background: red;
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	bottom: 0px;
+	left: 15px;
+	right: 15px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.8); 
+	border-radius: 60px/10px;
+}
+.imgbox{
+	width: 980px;
+	height: auto;
+	overflow: hidden;
+	margin: 20px auto;
+}
+.imgbox li{
+	width: 203px;
+	height: 251px;
+	float: left;
+	background: #FFF;
+	position: relative;
+	margin-left:80px; 
+	border:2px solid #efefef;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.27),
+	box-shadow 0 0 60px rgba(0,0,0,0.1) inset;
+}
+.imgbox li img{
+	width: 187px;
+	height: 229px;
+	margin: 10px 10px;
+}
+.imgbox li:before{
+	z-index: -2;
+	content: "";
+	position: absolute;
+	width: 90%;
+	height: 80%;
+	bottom: 4px;
+	left: 20px;
+	background: transparent;
+	box-shadow:  0 8px 20px rgba(0,0,0,0.6);
+	transform:skew(-12deg) rotate(-10deg); 
+}
+.imgbox li:after{
+	z-index: -2;
+	content: "";
+	position: absolute;
+	width: 90%;
+	height: 80%;
+	bottom: 4px;
+	right: 20px;
+	background: transparent;
+	box-shadow:  0 8px 20px rgba(0,0,0,0.6);
+	transform:skew(12deg) rotate(10deg); 
+}

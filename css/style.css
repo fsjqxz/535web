@@ -1,0 +1,35 @@
+*{
+	margin:0;
+  	padding:0;	
+}
+#title{
+	width: 400px;
+	height: 70px;
+	margin-top: 100px;
+	background-color: #fff;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 24px;
+	font-style: bold; 
+	color: #f00;
+	line-height: 70px;
+}
+#btn{
+	width: 240px;
+	height: 30px;
+	margin: 0 auto;
+}
+#btn span{
+	display: block;
+	float: left;
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	background-color: #036;
+	border: 1px solid #eee;
+	border-radius: 7px;
+	text-align: center;
+	font-size: 14px;
+	margin-left: 30px;
+	cursor:pointer;	
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ÊêúÁ¥¢</title>
+<style type="text/css">
+    *{
+        padding: 0;
+        border: 0;
+    }
+body { margin: 0px; padding: 0px;}
+    #backimg{
+	background: url(22.jpg);
+        width:1242px;
+        height: 603px;
+        margin:0 auto;
+        background-color: #E5E2E2;
+        position: relative;
+        text-align:center;
+    }
+    .logo{
+        float: left;
+        background: url(jpg/logo.png) no-repeat;
+        margin: -4px 18px 0 0;
+        height: 50px;
+        width: 107px;
+    }
+    #search .search-box{
+        float: left;
+        background-color: #fff;
+        width: 400px;
+        height: 40px;
+        
+
+    }
+    #search .search-box .input-text{
+        border: 0;
+        float: left;
+        padding-left:1px;
+        width: 359px;
+        height: 40px;
+        line-height: 40px; 
+        font-size: 18px;
+        outline: none;
+        font-family: "ÂæÆËΩØÈõÖÈªë"
+
+    }
+    #search .search-box .input-sumbit{
+        float: right;
+        background: url(jpg/search.png);
+        width: 40px;
+        height: 40px;
+        border: 0;
+        cursor: pointer;
+
+    }
+    #search{
+        position: absolute;
+        top: 40%;
+        left: 30%;
+    }
+    .suggest{
+        width: 398px;
+        background: #fff;
+        border:  1px solid #999;
+    }
+    .suggest ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .suggest ul li{
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>À—À˜</title>
+<style type="text/css">
+    *{
+        padding: 0;
+        border: 0;
+    }
+    body { 
+        margin: 0px; 
+        padding: 0px;
+    }
+    #backimg{
+        background: url(22.jpg);
+        width:1366px;
+        height: 663px;
+        margin:0 auto;
+        background-color: #E5E2E2;
+        position: relative;
+        text-align:center;
+
+    }
+    .logo{
+        float: left;
+        background: url(logo.png) no-repeat;
+        margin: -4px 18px 0 0;
+        height: 50px;
+        width: 107px;
+    }
+    #search .search-box{
+        float: left;
+        background-color: #fff;
+        width: 400px;
+        height: 40px;
+        
+
+    }
+    #search .search-box .input-text{
+        border: 0;
+        float: left;
+        padding-left:1px;
+        width: 359px;
+        height: 40px;
+        line-height: 40px; 
+        font-size: 18px;
+        outline: none;
+        font-family: "Œ¢»Ì—≈∫⁄"
+
+    }
+    #search .search-box .input-sumbit{
+        float: right;
+        background: url(search.png);
+        width: 40px;
+        height: 40px;
+        border: 0;
+        cursor: pointer;
+
+    }
+    #search{
+        position: absolute;
+        top: 40%;
+        left: 30%;
+    }
+    .suggest{
+        width: 398px;
+        background: #fff;
+        border:  1px solid #999;
+    }
+    .suggest ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .suggest ul li{
+        width: 398px;
+        line-height: 25px;
+        font-size: 16px;
+        line-height: 25px;
+        cursor: pointer;
+        padding: 3px;
+    }
+    .suggest ul li:hover{
+        background: #e5e5e5;
+
+    }
+
+</style>
+</head>
+<body>
+<div id="backimg">
+    <div id="search">
+    <div class="logo"></div>
+    <form class="search-box"  action="https://www.bing.com/search" target="_blank" method="get">
+            <input type="text" class="input-text" name="q" id="search-input" autocomplete="off">
+            <input type="submit" class="input-sumbit" value="">
+    </form>
+    </div>
+</div>
+<div class="suggest" id="search-suggest" style="display:none">
+    <ul id='search-result'>
+        <li>bilibili</li>
+        <li>acfun</li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $('#search-input').on('keyup',function(){
+        var searchtext = $('#search-input').val();
+        $.get('http://api.bing.com/qsonhs.aspx?q='+ searchtext,function(d){
+            var d =d.AS.Results[0].Suggest;
+            var html=''
+            for(var i=0;i<d.length;i++){
+                html+='<li>'+d[i].Txt+'</li>';
+            }
+            $('#search-result').html(html);
+            $('#search-suggest').show().css({
+            top:$('.search-box').offset().top + 40,
+            left:$('.search-box').offset().left,
+            position:'absolute'
+        });
+        },'json');
+        
+    })
+</script>
+</body>
+</html>
